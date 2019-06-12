@@ -8,8 +8,8 @@ import ru.javawebinar.topjava.repository.MealRepository;
 import ru.javawebinar.topjava.util.MealsUtil;
 import ru.javawebinar.topjava.util.Util;
 
-import javax.annotation.PostConstruct;
-import javax.annotation.PreDestroy;
+//import javax.annotation.PostConstruct;
+//import javax.annotation.PreDestroy;
 import java.time.LocalDateTime;
 import java.time.Month;
 import java.util.Collections;
@@ -20,8 +20,8 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
-import static ru.javawebinar.topjava.repository.inmemory.InMemoryUserRepositoryImpl.ADMIN_ID;
-import static ru.javawebinar.topjava.repository.inmemory.InMemoryUserRepositoryImpl.USER_ID;
+import static ru.javawebinar.topjava.UserTestData.ADMIN_ID;
+import static ru.javawebinar.topjava.UserTestData.USER_ID;
 
 @Repository
 public class InMemoryMealRepositoryImpl implements MealRepository {
@@ -44,7 +44,7 @@ public class InMemoryMealRepositoryImpl implements MealRepository {
         return meals.save(meal);
     }
 
-    @PostConstruct
+    /*@PostConstruct
     public void postConstruct() {
         log.info("+++ PostConstruct");
     }
@@ -52,7 +52,7 @@ public class InMemoryMealRepositoryImpl implements MealRepository {
     @PreDestroy
     public void preDestroy() {
         log.info("+++ PreDestroy");
-    }
+    }*/
 
     @Override
     public boolean delete(int id, int userId) {
